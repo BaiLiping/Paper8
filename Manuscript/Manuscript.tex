@@ -261,7 +261,7 @@ The inverted double pendulum has observation space of the following: [x position
 \label{fig:double}
 \end{figure}
 
-Figure\ref{fig:double} shows how the PID controller manages the lower pole angle $\theta_1$ and its angular velocity $V_{\theta_1}$. 
+Figure\ref{fig:double} shows how the PID controller manages the lower pole angle $\theta_1$ and its angular velocity $V_{\theta_1}$. The parameters for the PID coach is the following: $k_p=[-0.5,-0.5], k_i=[-0.04,-0.003], k_d=[-2.95,-0.56]$. The actuator action is computed with the following formula: action=$k_p[0]\times \theta_1+k_i[0]\times \sum{\theta_1}+k_d[0]\times V_{\theta_1}+k_p[1]\times \theta_2+k_i[1]\times \sum{\theta_2}+k_d[1]\times V_{\theta_2}$. The PID controller functions well until the equilibrium breaks down with too much disposition on the x-axis.
 
 Based on our observation of the system, we decided to put the boundary between critical and noncritical states on the lower angle of with an absolute value of 0.2. The RL agent is free to explore with the lower angle with an absolute value smaller than 0.2, but once it goes above this bound, the PID controller will kick in, trying to nudge the lower angle back to the 0.2 bound.
 
