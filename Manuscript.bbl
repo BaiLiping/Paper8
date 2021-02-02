@@ -106,12 +106,22 @@ Y.~Cheng, B.~Jiang, H.~Li, and X.-D. Han, ``On-orbit reconfiguration using
   and Systems}, vol.~17, pp. 822--835, 2019.
 
 \bibitem{Knox2009InteractivelySA}
+\BIBentryALTinterwordspacing
 W.~B. Knox and P.~Stone, ``Interactively shaping agents via human
-  reinforcement: the tamer framework,'' in \emph{K-CAP '09}, 2009.
+  reinforcement: The tamer framework,'' in \emph{Proceedings of the Fifth
+  International Conference on Knowledge Capture}, ser. K-CAP '09.\hskip 1em
+  plus 0.5em minus 0.4em\relax New York, NY, USA: Association for Computing
+  Machinery, 2009, p. 9–16. [Online]. Available:
+  \url{https://doi.org/10.1145/1597735.1597738}
+\BIBentrySTDinterwordspacing
 
 \bibitem{Knox2010CombiningMF}
 ------, ``Combining manual feedback with subsequent mdp reward signals for
-  reinforcement learning,'' in \emph{AAMAS}, 2010.
+  reinforcement learning,'' in \emph{Proceedings of the 9th International
+  Conference on Autonomous Agents and Multiagent Systems: Volume 1 - Volume 1},
+  ser. AAMAS '10.\hskip 1em plus 0.5em minus 0.4em\relax Richland, SC:
+  International Foundation for Autonomous Agents and Multiagent Systems, 2010,
+  p. 5–12.
 
 \bibitem{Peng2018DeepMimicED}
 X.~Peng, P.~Abbeel, S.~Levine, and M.~V.~D. Panne, ``Deepmimic: Example-guided
