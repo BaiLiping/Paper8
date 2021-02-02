@@ -62,8 +62,8 @@
 %\usepackage{biblatex}
 %\bibliographystyle{plain}
 
-\usepackage[font=scriptsize]{caption}
-\captionsetup[figure]{font=scriptsize}
+\usepackage[font=normalsize]{caption}
+\captionsetup[figure]{font=normalsize}
 
 
 
@@ -111,18 +111,18 @@ Zongqiang Pang, Liping Bai, Yang Yang are with the College of Automation \& Coll
 \runningtitle{2021}{Zongqiang Pang, Liping Bai, Yang Yang}{Manuscript Template for the International Journal of Control, Automation, and Systems: ICROS {\&} KIEE}{xxx}{xxxx}{x}
 
 \section{Introduction}
-Learning for Dynamic Control is an emerging field of research located at the interaction between classic control and reinforcement learning (RL). Although RL community routinely generate jaw-dropping results that seem out of reach to the control community\cite{Andrychowicz2020LearningDI}\cite{Kalashnikov2018QTOptSD}\cite{Lee2020LearningQL}, the theories that undergird RL are as bleak as it was first introduced\cite{Bertsekas1996NeuroDynamicP}. Today, those deficiencies can be easily papered over by the advent of Deep Neural Networks (DNN) and ever faster computational capacities. However, for RL to reach its full potential, existing control theories and strategies have to be part of that new combined formulation.
+Learning for Dynamic Control is an emerging field of research located at the interaction between classic control and reinforcement learning (RL). Although RL community routinely generate jaw-dropping results that seem out of reach to the control community\cite{Dao2020AdaptiveRL}\cite{Zheng2020BalanceCF}\cite{Xin2020RobustES}\cite{Dornheim2018ModelfreeAO}, the theories that undergird RL are as bleak as it was first introduced\cite{Bertsekas1996NeuroDynamicP}. Today, those deficiencies can be easily papered over by the advent of Deep Neural Networks (DNN) and ever faster computational capacities. However, for RL to reach its full potential, existing control theories and strategies have to be part of that new combined formulation.
 
-There are three ways that classic control finds its way into RL. First, theorists who are well versed in optimization techniques and mathematical formalism can provide systematic perspectives to RL and invent the much needed analytical tools\cite{Han2020ActorCriticRL}\cite{Weinan2017APO}\cite{Dupont2019AugmentedNO}\cite{Betancourt2018OnSO}\cite{Nachum2020ReinforcementLV}. Second, system identification researchers are exploring all possible configurations to combine existing system models with DNN and its variations\cite{Hewing2020LearningBasedMP}\cite{Mohan2020EmbeddingHP}\cite{Lusch2018DeepLF}\cite{Bai2019DeepEM}\cite{BelbutePeres2020CombiningDP}. Third, proven controllers can provide data on successful control trajectories to be used in imitation learning, reverse reinforcement learning, and "human"-in-the-loop learning\cite{Knox2009InteractivelySA}\cite{Knox2010CombiningMF}\cite{Peng2018DeepMimicED}\cite{Peng2020LearningAR}\cite{Paine2018OneShotHI}.
+There are three ways that classic control finds its way into RL. First, theorists who are well versed in optimization techniques and mathematical formalism can provide systematic perspectives to RL and invent the much needed analytical tools\cite{Han2020ActorCriticRL}\cite{Weinan2017APO}\cite{Dupont2019AugmentedNO}\cite{Betancourt2018OnSO}\cite{Nachum2020ReinforcementLV}\cite{Lv2019ApproximateOS}. Second, system identification researchers are exploring all possible configurations to combine existing system models with DNN and its variations\cite{Hewing2020LearningBasedMP}\cite{Mohan2020EmbeddingHP}\cite{Lusch2018DeepLF}\cite{Bai2019DeepEM}\cite{BelbutePeres2020CombiningDP}\cite{Oh2020DeepRB}\cite{Cheng2019OnorbitRU}. Third, proven controllers can provide data on successful control trajectories to be used in imitation learning, reverse reinforcement learning, and "human"-in-the-loop learning\cite{Knox2009InteractivelySA}\cite{Knox2010CombiningMF}\cite{Peng2018DeepMimicED}\cite{Peng2020LearningAR}\cite{Paine2018OneShotHI}\cite{Choi2017InverseRL}.
 
 Our approach is an extension of the third line of research. We propose a coaching structure between the classical controllers and the RL agents. Professional athletes don't get where they are via trial-and-error. Their skillsets are forged through painstakingly designed coaching techniques. At the top level, a coach's objective is not to be a template for the athletes to imitate after, but rather is to facilitate data collection on critical states. 
 
-Previous researches\cite{Xie2018LearningWT}\cite{Carlucho2017IncrementalQS}\cite{Pavse2020RIDMRI} are about making a functioning controller works better. They require high-quality controllers to begin with, and the improvements brought about by the RL agents are merely icing on the cake. In addition, the controllers inadvertently impose limits on what can be achieved by the RL agents. If, unfortunately, a bad controller is chosen, then the RL training process would be hindered rather than expedited. 
+Previous researches\cite{Xie2018LearningWT}\cite{Carlucho2017IncrementalQS}\cite{Pavse2020RIDMRI}\cite{Choi2017InverseRL} are about making a functioning controller works better. They require high-quality controllers to begin with, and the improvements brought about by the RL agents are merely icing on the cake. In addition, the controllers inadvertently impose limits on what can be achieved by the RL agents. If, unfortunately, a bad controller is chosen, then the RL training process would be hindered rather than expedited. 
 
 \definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
 \definecolor{beaublue}{rgb}{0.74, 0.83, 0.9}
 
-\begin{table}[H]
+\begin{table}
 \footnotesize
 \caption{Performance of the PID controllers, as indicated by the average score over 10 episodes.}
 \label{score_compare}
@@ -142,7 +142,7 @@ In our approach, the Coaches are PID controllers that can only score a fraction 
 
 
 
-\begin{table}[H]
+\begin{table}
 \scriptsize
 \caption{Comparison Between RL Agents Trained With and Without PID Coaches.}
 \label{episode_compare}
@@ -166,7 +166,7 @@ Pendulum & &Average & 1391 & 2031& 31.5\%\\
 
 In section II, we present the idea of controller-based coaching. In section III, we present the results of our experiments in the inverted pendulum and inverted double pendulum simulations. We conclude what we have learned and layout directions for further research in section IV.
 
-\section{PID Controller Based Coaching}
+\section{Methods}
 
 Reinforcement Learning is the process of cycling between interaction with an environment and refinement of the understanding of that environment. RL agents methodically extract information from experiences, gradually bounding system models, policy distributions, or cost-to-go approximations to maximize the expected rewards along a trajectory. RL is an umbrella term that encompasses distinctive learning genres, which means updating parameters for the function approximators. A general taxonomy of RL is listed below:
 
@@ -184,7 +184,7 @@ Crucially, the agent is oblivious to this intervention step, and it would not be
 
 On the other hand, if the controller successfully adjusts the trajectory, the RL agent's next data collection cycle will be spent in a critical state. Therefore, all we require of the PID controller is a reasonable success rate in adjusting the RL agent's trajectory. We test our approach on four mujoco locomotion environments as a proof of concept, and in all four experiments, the hypothesized acceleration on RL training is observed.
 
-\section{Experiment Setup}
+\section{Experimental Results}
 Mujoco physics engine\cite{6386109}, is one of many such simulation tools. We interface with it through a python wrapper provided by the OpenAI Gym\cite{Brockman2016OpenAIG}. We choose two environments for our experiments as a proof of concept: inverted pendulum, double inverted pendulum. 
 
 Every environment comes with a set of predetermined rewards and maximum episode steps. We did not tinker with those parameters. The only change we made to each environment is a controller-based coach ready to intervene when the agent steps out of the predetermined critical states.
@@ -197,73 +197,73 @@ Our experiments' code and data can be accessed via \href{https://github.com/BaiL
 
 \subsection{Inverted Pendulum}
 The observation space of the inverted pendulum environment is: [Cart Position on X-axis, Cart Velocity, Pole Angle, Pole Angular Velocity]. The continuous action space is an action ranging from -1 to 1, where -1 means the actuator moves the cart to the left with maximum power and 1 means the actuator moves the cart to the right with full force. The maximum episode step number is 1000. The terminal state for the inverted pendulum is an angle of absolute value greater than 0.2 radius. The reward is 1 for each non-terminal step and 0 for the terminal step. 
-\begin{figure}
-\centering
-\begin{subfigure}{0.25\textwidth}
-\centering
-\includegraphics[width=\linewidth]{ip_PID.png}
-\label{fig:ip_pid}
-\end{subfigure}%
-\begin{subfigure}{.25\textwidth}
-\centering
-\includegraphics[width=\linewidth]{ip_PID_actions.png}
-\label{fig:ip_pid_actions}
-\end{subfigure}
-\caption{Inverted Pendulum system controlled by the PID coach. The average score achieved by the PID controller is 240 out of 1000.}
-\label{fig:ip}
+
+\begin{figure}[H]
+  \centering 
+  \includegraphics[width=0.3\textwidth]{ip_PID}
+  \caption{Inverted Pendulum system controlled by the PID coach. The average score achieved by the PID controller is 240 out of 1000.}
+  \label{fig:ip_pid}
 \end{figure}
+\begin{figure}[H]
+  \centering 
+  \includegraphics[width=0.3\textwidth]{ip_PID_actions}
+  \caption{Actions taken by the PID controller}
+  \label{fig:ip_pid_actions}
+\end{figure} 
 
-
-Figure\ref{fig:ip} shows how the PID controller manages the pole angle and its angular velocity. The PID parameters are the following: $k_p=30,k_i=0.01,k_d=2.26$. While the PID controller tries hard to converge to zero, eventually, there would be too much accumulation on the x-axis, and the equilibrium breaks down.
+Figure \ref{fig:ip_pid} shows how the PID controller manages the pole angle and its angular velocity. The PID parameters are the following: $k_p=30,k_i=0.01,k_d=2.26$. The action of PID controller is shown in Figure \ref{fig:ip_pid_actions}. While the PID controller tries hard to converge to zero, eventually, there would be too much accumulation on the x-axis, and the equilibrium breaks down.
 
 Based on our observations of the system, we decide to put the boundary between critical and noncritical states on the angular velocity with an absolute value of 0.4. The RL agent is free to explore with the angular velocity with an absolute value smaller than 0.4, but once it goes above this bound, the PID controller will kick in, trying to decrease the velocity back to the 0.4 bound.
 
-The experiment result is presented in Figure\ref{fig:ip_result}. The black line indicates the RL agent trained without PID coach, and the blue line indicates the agent trained with a PID coach. The points on the line are the average score over 20 episodes, and the shaded area is the standard deviation. A predetermined standard is set at a score of 800. It takes the RL agent without PID coach 160 episodes to get five consecutive scores above the standard, and it takes the RL agent with PID coach 90 episodes to do the same. PID coach results a 43.8\% acceleration in RL training. As measured by averaging over 20 episodes, it takes the RL agent without PID coach 159 episodes to go beyond 800, and it takes the RL agent with PID coach 91 episodes to do the same. PID coach results a 42.8\% acceleration in RL training. Both RL agents trained with and without PID coach pass the evaluation, and their respective average scores are presented in the upper left corner. The final performance of the RL agent is shown in Figure\ref{fig:ip_rl}.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{ip.png}
 \caption{Inverted Pendulum Experiment Result. }
 \label{fig:ip_result}
-
 \end{figure}
 
+The experiment result is presented in Figure\ref{fig:ip_result}. The black line indicates the RL agent trained without PID coach, and the blue line indicates the agent trained with a PID coach. The points on the line are the average score over 20 episodes, and the shaded area is the standard deviation. A predetermined standard is set at a score of 800. It takes the RL agent without PID coach 160 episodes to get five consecutive scores above the standard, and it takes the RL agent with PID coach 90 episodes to do the same. PID coach results a 43.8\% acceleration in RL training. As measured by averaging over 20 episodes, it takes the RL agent without PID coach 159 episodes to go beyond 800, and it takes the RL agent with PID coach 91 episodes to do the same. PID coach results a 42.8\% acceleration in RL training. Both RL agents trained with and without PID coach pass the evaluation, and their respective average scores are presented in the upper left corner. The final performance of the RL agent is shown in Figure\ref{fig:ip_rl} and the actions taken by the RL agent is shown in Figure \ref{fig:ip_rl_actions}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\begin{subfigure}{0.25\textwidth}
-\centering
-\includegraphics[width=\linewidth]{ip_RL.png}
-\label{fig:ip_pid}
-\end{subfigure}%
-\begin{subfigure}{.25\textwidth}
-\centering
-\includegraphics[width=\linewidth]{ip_RL_actions.png}
-\label{fig:ip_pid_actions}
-\end{subfigure}
+\includegraphics[width=0.3\textwidth]{ip_RL.png}
 \caption{Inverted Pendulum system controlled by the RL agent. The average score achieved by the RL agent is 1000 out of 1000.}
 \label{fig:ip_rl}
+\end{figure}%
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{ip_RL_actions.png}
+\caption{Actions taken by the RL agent}
+\label{fig:ip_rl_actions}
 \end{figure}
+
 
 \subsection{Inverted Double Pendulum}
 The inverted double pendulum has observation space of the following: [x position of the cart, sin($\theta_1$), sin($\theta_2$),cos($\theta_1$),cos($\theta_2$),velocity of x, angular velocity of $\theta_1$, angular velocity of $\theta_2$, constraint force on x, constraint force on $\theta_1$, constraint force on $\theta_2$]. $\theta_1$ and $\theta_2$ are the angles of the upper and lower pole respectively. The action space for Inverted Double Pendulum is an action ranging from -1 to 1, where -1 means the actuator moves the cart to the left with maximum power and 1 means the actuator moves the cart to the right with maximum power. A score of roughly 10 points is assigned to non-terminal states, based on the velocity on the x-axis. The detailed formula for score computation can be found at the OpenAI site.
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.25\textwidth}
+\begin{subfigure}{0.3\textwidth}
 \centering
 \includegraphics[width=\linewidth]{double_PID.png}
-\end{subfigure}%
-\begin{subfigure}{.25\textwidth}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
 \centering
-\includegraphics[width=\linewidth]{double_PID_actions.png}
+\includegraphics[width=\linewidth]{double_PID_upper.png}
 \end{subfigure}
 \caption{Inverted Double Pendulum system controlled the PID coach. The average score achieved by the PID controller is 1107 out of 10000. }
-\label{fig:double}
+\label{fig:double_pid}
 \end{figure}
 
-Figure\ref{fig:double} shows how the PID controller manages the lower pole angle $\theta_1$ and its angular velocity $V_{\theta_1}$. The parameters for the PID coach is the following: $k_p=[-0.5,-0.5], k_i=[-0.04,-0.003], k_d=[-2.95,-0.56]$. The PID controller functions well until the equilibrium breaks down with too much disposition on the x-axis.
+\begin{figure}[H]
+\centering
+\includegraphics[width=.3\textwidth]{double_PID_actions.png}
+\caption{Actions taken by the PID controller}
+\label{fig:double_pid_actions}
+\end{figure}
 
-Based on our observation of the system, we decided to put the boundary between critical and noncritical states on the lower angle of with an absolute value of 0.2. The RL agent is free to explore with the lower angle with an absolute value smaller than 0.2, but once it goes above this bound, the PID controller will kick in, trying to nudge the lower angle back to the 0.2 bound.
+Figure\ref{fig:double_pid} shows how the PID controller manages the lower pole angle $\theta_1$ and its angular velocity $V_{\theta_1}$. The parameters for the PID coach is the following: $k_p=[-0.5,-0.5], k_i=[-0.04,-0.003], k_d=[-2.95,-0.56]$. The actions taken by the PID controller is shown in Figure \ref{fig:double_pid_actions}.The PID controller functions well until the equilibrium breaks down with too much disposition on the x-axis.
 
 \begin{figure}[H]
 \centering
@@ -271,21 +271,34 @@ Based on our observation of the system, we decided to put the boundary between c
 \caption{Inverted Double Pendulum Coaching Result.}
 \label{fig:double_result}
 \end{figure}
+
+Based on our observation of the system, we decided to put the boundary between critical and noncritical states on the lower angle of with an absolute value of 0.2. The RL agent is free to explore with the lower angle with an absolute value smaller than 0.2, but once it goes above this bound, the PID controller will kick in, trying to nudge the lower angle back to the 0.2 bound.
+
+
+
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.25\textwidth}
+\begin{subfigure}{0.3\textwidth}
 \centering
 \includegraphics[width=\linewidth]{double_RL.png}
-\end{subfigure}%
-\begin{subfigure}{.25\textwidth}
-\centering
-\includegraphics[width=\linewidth]{double_RL_actions.png}
 \end{subfigure}
-\caption{Inverted Double Pendulum system controlled the RL agent. The average score achieved by the RL agent is 9319 out of 10000.}
+\begin{subfigure}{0.3\textwidth}
+\centering
+\includegraphics[width=\linewidth]{double_RL_upper.png}
+\end{subfigure}
+\caption{Inverted Double Pendulum system controlled the RL agent. The average score achieved by the RL agent is 9319 out of 10000. }
 \label{fig:double_rl}
 \end{figure}
 
-The experiment result is presented in Figure\ref{fig:double_result}. The black line indicates the RL agent trained without PID coach, and the blue line indicates the agent trained with a PID coach. The points on the line are the average score over 200 episodes, and the shaded area is the standard deviation. A predetermined standard is set at a score of 7000. It takes the RL agent without PID coach 1909 episodes to get five consecutive scores above the standard, and it takes the RL agent with PID coach 1024 episodes to do the same. PID coach results a 46.3\% acceleration in RL training. As measured by averaging over 200 episodes, it takes RL agent without PID coach 2031 episodes to go beyond 7000, and it takes RL agent with PID coach 1391 episodes to do the same. PID coach results a 31.5\% acceleration in RL training. The discrepancy between the two measurements is stems from the fact that RL agent trained with the PID controller has a higher variance on its performance. Both agents trained with and without PID coach pass the evaluation, and their respective average scores are presented in the upper left corner. The final performance of the RL agent is shown in Figure\ref{fig:double_rl}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.3\textwidth]{double_RL_actions.png}
+\caption{Actions taken by the RL agent.}
+\label{fig:double_rl_actions}
+\end{figure}
+
+The experiment result is presented in Figure\ref{fig:double_result}. The black line indicates the RL agent trained without PID coach, and the blue line indicates the agent trained with a PID coach. The points on the line are the average score over 200 episodes, and the shaded area is the standard deviation. A predetermined standard is set at a score of 7000. It takes the RL agent without PID coach 1909 episodes to get five consecutive scores above the standard, and it takes the RL agent with PID coach 1024 episodes to do the same. PID coach results a 46.3\% acceleration in RL training. As measured by averaging over 200 episodes, it takes RL agent without PID coach 2031 episodes to go beyond 7000, and it takes RL agent with PID coach 1391 episodes to do the same. PID coach results a 31.5\% acceleration in RL training. The discrepancy between the two measurements is stems from the fact that RL agent trained with the PID controller has a higher variance on its performance. Both agents trained with and without PID coach pass the evaluation, and their respective average scores are presented in the upper left corner. The final performance of the RL agent is shown in Figure\ref{fig:double_rl} and the actions taken by the RL agent is shown in Figure \ref{fig:double_rl_actions}.
 
 \section{Conclusion}
 

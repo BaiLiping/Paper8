@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Manuscript.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: Bibliography.bib
+Repeated entry---line 453 of file Bibliography.bib
+ :   @article{BelbutePeres2020CombiningDP
+ :                                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 493 of file Bibliography.bib
+ : @inproceedings{Sutton1998IntroductionTR
+ :                                        ,
+I'm skipping whatever remains of this entry
+-- IEEEtran.bst version 1.11 (2003/04/02) by Michael Shell.
+-- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty booktitle in Weinan2017APO
+Warning--empty booktitle in Hewing2020LearningBasedMP
+Warning--empty booktitle in Sutton1998IntroductionTR
+Warning--empty journal in SpinningUp2018
+
+Done.
+You've used 32 entries,
+            3975 wiz_defined-function locations,
+            972 strings with 12886 characters,
+and the built_in function-call counts, 21038 in all, are:
+= -- 1603
+> -- 595
+< -- 136
++ -- 320
+- -- 115
+* -- 999
+:= -- 3212
+add.period$ -- 64
+call.type$ -- 32
+change.case$ -- 32
+chr.to.int$ -- 315
+cite$ -- 36
+duplicate$ -- 1597
+empty$ -- 1763
+format.name$ -- 145
+if$ -- 4816
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 289
+newline$ -- 118
+num.names$ -- 32
+pop$ -- 742
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1643
+stack$ -- 0
+substring$ -- 765
+swap$ -- 1184
+text.length$ -- 31
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 0
+warning$ -- 4
+while$ -- 71
+width$ -- 34
+write$ -- 305
+(There were 2 error messages)
