@@ -139,9 +139,6 @@ Double Pendulum & 1107 & 10000& 11.07\%\\
 
 In our approach, the Coaches are PID controllers that can only score a fraction of what is available, as shown by Table \ref{score_compare}. Yet, even with such barely-functioning controllers, when appropriately structured, RL agent training acceleration is still observed in our experiments, as shown by Table \ref{episode_compare}. "Coaching" means the PID controller takes over when the RL agent deviated from the essential states. Our approach also differs from previous researches in one significant way: interventions from the coach are hidden from the RL agents and they are not part of the training data. We also restrain from reward engineering, such that we can be confident that the observed acceleration does not stem from other alterations. The implementations would be detailed in subsequent sections.
 
-
-
-
 \begin{table}
 \scriptsize
 \caption{Comparison Between RL Agents Trained With and Without PID Coaches.}
